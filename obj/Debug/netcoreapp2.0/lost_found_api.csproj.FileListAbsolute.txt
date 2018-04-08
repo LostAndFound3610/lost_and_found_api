@@ -1,0 +1,10 @@
+/Users/larry/Documents/SP18/3610_project/lost_found_api/bin/Debug/netcoreapp2.0/lost_found_api.deps.json
+/Users/larry/Documents/SP18/3610_project/lost_found_api/bin/Debug/netcoreapp2.0/lost_found_api.runtimeconfig.json
+/Users/larry/Documents/SP18/3610_project/lost_found_api/bin/Debug/netcoreapp2.0/lost_found_api.runtimeconfig.dev.json
+/Users/larry/Documents/SP18/3610_project/lost_found_api/bin/Debug/netcoreapp2.0/lost_found_api.dll
+/Users/larry/Documents/SP18/3610_project/lost_found_api/bin/Debug/netcoreapp2.0/lost_found_api.pdb
+/Users/larry/Documents/SP18/3610_project/lost_found_api/obj/Debug/netcoreapp2.0/lost_found_api.csproj.CoreCompileInputs.cache
+/Users/larry/Documents/SP18/3610_project/lost_found_api/obj/Debug/netcoreapp2.0/lost_found_api.AssemblyInfoInputs.cache
+/Users/larry/Documents/SP18/3610_project/lost_found_api/obj/Debug/netcoreapp2.0/lost_found_api.AssemblyInfo.cs
+/Users/larry/Documents/SP18/3610_project/lost_found_api/obj/Debug/netcoreapp2.0/lost_found_api.dll
+/Users/larry/Documents/SP18/3610_project/lost_found_api/obj/Debug/netcoreapp2.0/lost_found_api.pdb
