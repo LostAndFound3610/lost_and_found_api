@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using lost_found_api.Models;
 using lost_found_api.Data;
+using Microsoft.AspNetCore.Cors;
 
 namespace lost_found_api.Controllers
 {
@@ -27,6 +28,7 @@ namespace lost_found_api.Controllers
         }
 
         [HttpGet]
+        [EnableCors("CorsPolicy")]
         public IActionResult GetAll()
         {
             return Ok(db.Items);
@@ -34,6 +36,7 @@ namespace lost_found_api.Controllers
 
 
         [HttpGet("{id}")]
+        [EnableCors("CorsPolicy")]
         public IActionResult GetById(int id)
         {
             var item = db.Items.Find(id);
@@ -46,6 +49,7 @@ namespace lost_found_api.Controllers
         }
 
         [HttpPost]
+        [EnableCors("CorsPolicy")]
         public IActionResult Post([FromBody]Item item)
         {
             if(item == null){
@@ -55,10 +59,12 @@ namespace lost_found_api.Controllers
             this.db.Items.Add(item);
             this.db.SaveChanges();
 
-            return CreatedAtRoute("GetItem", new { id = item.Id }, item);
+            //return CreatedAtRoute("GetItem", new { id = item.Id }, item);
+            return Ok(item);
         }
 
         [HttpPut("{id}")]
+        [EnableCors("CorsPolicy")]
         public IActionResult Put(int id, [FromBody]Item newItem)
         {
             if (newItem == null || newItem.Id != id){
@@ -82,6 +88,7 @@ namespace lost_found_api.Controllers
         }
 
         [HttpDelete("{id}")]
+        [EnableCors("CorsPolicy")]
         public IActionResult Delete(int id)
         {
             var item = this.db.Items.FirstOrDefault(x => x.Id == id);

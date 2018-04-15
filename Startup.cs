@@ -10,6 +10,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using lost_found_api.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Cors;
 
 namespace lost_found_api
 {
@@ -28,6 +29,14 @@ namespace lost_found_api
             services.AddDbContext<lostfoundcontext>(options =>
     options.UseNpgsql(Configuration.GetConnectionString("lostfoundConnection")));
             services.AddMvc();
+            services.AddCors(
+                options =>{
+                options.AddPolicy("CorsPolicy",
+                builder => builder
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -38,6 +47,7 @@ namespace lost_found_api
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors("CorsPolicy");
             app.UseMvc();
         }
     }
