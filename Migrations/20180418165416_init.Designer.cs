@@ -11,7 +11,7 @@ using System;
 namespace lost_found_api.Migrations
 {
     [DbContext(typeof(lostfoundcontext))]
-    [Migration("20180408194835_init")]
+    [Migration("20180418165416_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -48,11 +48,13 @@ namespace lost_found_api.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Email_Addr");
+                    b.Property<string>("emailaddr");
 
-                    b.Property<string>("Phone_Num");
+                    b.Property<string>("password");
 
-                    b.Property<string>("User_Name");
+                    b.Property<string>("phonenum");
+
+                    b.Property<string>("username");
 
                     b.HasKey("Id");
 
@@ -62,7 +64,7 @@ namespace lost_found_api.Migrations
             modelBuilder.Entity("lost_found_api.Models.Item", b =>
                 {
                     b.HasOne("lost_found_api.Models.User", "user")
-                        .WithMany("Items")
+                        .WithMany()
                         .HasForeignKey("userId");
                 });
 #pragma warning restore 612, 618

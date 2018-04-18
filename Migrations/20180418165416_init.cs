@@ -15,9 +15,10 @@ namespace lost_found_api.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
-                    Email_Addr = table.Column<string>(nullable: true),
-                    Phone_Num = table.Column<string>(nullable: true),
-                    User_Name = table.Column<string>(nullable: true)
+                    emailaddr = table.Column<string>(nullable: true),
+                    password = table.Column<string>(nullable: true),
+                    phonenum = table.Column<string>(nullable: true),
+                    username = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

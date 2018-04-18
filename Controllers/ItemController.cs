@@ -14,18 +14,21 @@ namespace lost_found_api.Controllers
     {
         private readonly lostfoundcontext db;
 
+        
         public ItemController(lostfoundcontext db){
             this.db = db;
-
+            
             if (this.db.Items.Count() == 0){
                 this.db.Items.Add(new Item {
-                    Id = 0,
+                    Id = 1,
                     Category = "test item"
                 });
 
                 this.db.SaveChanges();
             }
+            
         }
+        
 
         [HttpGet]
         [EnableCors("CorsPolicy")]
